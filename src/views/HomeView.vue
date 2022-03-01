@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '@/components/TheWelcome.vue'
+import HomeDashboard from "@/components/HomeDashboard.vue";
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <HomeDashboard />
   </main>
 </template>
