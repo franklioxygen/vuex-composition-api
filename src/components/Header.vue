@@ -7,7 +7,7 @@ defineProps<{
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <h3>This is a util lib demo for Vue.js</h3>
+    <h3>This is a demo utilizing Vuex with Composition API</h3>
   </div>
 </template>
 

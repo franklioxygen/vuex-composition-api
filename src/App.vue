@@ -6,12 +6,12 @@ import Header from "@/components/Header.vue";
 <template>
   <header>
     <div>
-      <Header msg="Vue Utils" />
+      <Header msg="Vuex with Composition API" />
 
-      <nav>
+      <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-      </nav>
+      </nav> -->
     </div>
   </header>
 

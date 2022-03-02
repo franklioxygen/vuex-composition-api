@@ -1,33 +1,33 @@
 {
-    "user":[
-        {
-        "id":0,
-        "name":"Kiwi",
-        "color":"black"
-        },
-        {
-        "id":1,
-        "name":"Tempura",
-        "color":"yellow"
-        },
-        {
-        "id":2,
-        "name":"Drum",
-        "color":"tabby"
-        }
-    ],
-    "food":[
-        {
-        "id":0,
-        "foodType":"chicken"
-        },
-        {
-        "id":1,
-        "foodType":"beef"
-        },
-        {
-        "id":2,
-        "foodType":"lamb"
-        }
-    ]
+  "user": [
+    {
+      "id": 0,
+      "name": "Kiwi",
+      "color": "black"
+    },
+    {
+      "id": 1,
+      "name": "Tempura",
+      "color": "yellow"
+    },
+    {
+      "id": 2,
+      "name": "Drum",
+      "color": "tabby"
+    }
+  ],
+  "food": [
+    {
+      "foodType": "chicken",
+      "id": 0
+    },
+    {
+      "foodType": "beef",
+      "id": 1
+    },
+    {
+      "foodType": "lamb",
+      "id": 2
+    }
+  ]
 }

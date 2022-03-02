@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { onMounted, computed, ref } from "vue";
-import { FETCH_USER_PROFILES, FETCH_FOOD_LIST } from "../../src/types/actions";
+import {
+  FETCH_USER_PROFILES,
+  FETCH_FOOD_LIST,
+  UPDATE_FOOD_TYPE,
+} from "../../src/types/actions";
 import { GET_SELECTED_USER } from "../../src/types/getters";
 
 import { useStore } from "vuex";
@@ -8,7 +12,7 @@ const store = useStore();
 const profiles = computed(() => store.state.profiles);
 const selectedUser = computed(() => store.state.selectedUser);
 const foodList = computed(() => store.state.foodModule.foodList);
-
+const state = ref({ editTarget: null });
 onMounted(() => {
   store.dispatch(`${FETCH_USER_PROFILES}`);
 });
@@ -20,6 +24,16 @@ function onSelectUser(event) {
 }
 function onClickGetFood() {
   store.dispatch(`foodModule/${FETCH_FOOD_LIST}`);
+}
+function editFoodType(foodId) {
+  state.value.editTarget = foodId;
+}
+function saveFoodType(foodId, foodType) {
+  store.dispatch(`foodModule/${UPDATE_FOOD_TYPE}`, {
+    foodId,
+    foodType,
+  });
+  state.value.editTarget = null;
 }
 </script>
 
@@ -41,7 +55,12 @@ function onClickGetFood() {
   <button @click="onClickGetFood">Get food</button>
   <ul style="list-style-type: none">
     <li v-for="(food, index) in foodList" :key="index">
+      <button @click="editFoodType(food.id, food.foodType)">edit</button>
       {{ food.foodType }}
+      <span v-show="state.editTarget === food.id">
+        <input type="text" v-model="food.foodType" />
+        <button @click="saveFoodType(food.id, food.foodType)">Save</button>
+      </span>
     </li>
   </ul>
 </template>

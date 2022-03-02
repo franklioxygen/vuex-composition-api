@@ -20,7 +20,7 @@ export default createStore({
     foodModule,
   },
   actions: {
-    async [FETCH_USER_PROFILES]({ commit }, userId) {
+    async [FETCH_USER_PROFILES]({ commit }) {
       try {
         const { data } = await axios.get(`${serverApi}/user`);
         commit(SET_USER_PROFILE, data);
