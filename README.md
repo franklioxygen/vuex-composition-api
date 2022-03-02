@@ -1,6 +1,8 @@
-# vue-utils
+# vue-composition-api
 
 This template should help get you started developing with Vue 3 in Vite.
+
+![image](https://user-images.githubusercontent.com/2637636/156452915-14ceaf09-a236-4068-89f9-42cf5a63b075.png)
 
 ## Recommended IDE Setup
 
