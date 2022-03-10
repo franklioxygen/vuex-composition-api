@@ -1,7 +1,7 @@
 import axios from "axios";
 import { FETCH_FOOD_LIST, UPDATE_FOOD_TYPE } from "../../types/actions";
 import { SET_FOOD_LIST, SET_FOOD_TYPE } from "../../types/mutations";
-import { serverApi } from "../../const";
+import { SERVER_API } from "../../const";
 
 export default {
   namespaced: true,
@@ -10,10 +10,11 @@ export default {
       foodList: [],
     };
   },
+  // Actions are used to dispatch data to backend Asynchronously
   actions: {
     async [FETCH_FOOD_LIST]({ commit }) {
       try {
-        const { data } = await axios.get(`${serverApi}/food`);
+        const { data } = await axios.get(`${SERVER_API}/food`);
         commit(SET_FOOD_LIST, data);
       } catch (error) {
         console.log(error);
@@ -22,7 +23,7 @@ export default {
     async [UPDATE_FOOD_TYPE]({ commit }, { foodId, foodType }) {
       try {
         await axios
-          .put(`${serverApi}/food/${foodId}`, {
+          .put(`${SERVER_API}/food/${foodId}`, {
             foodType: foodType,
           })
           .then((response) => {
@@ -34,6 +35,7 @@ export default {
       }
     },
   },
+  // Mutations are used to commit the STATE of store
   mutations: {
     [SET_FOOD_LIST](state, foodList) {
       state.foodList = foodList;

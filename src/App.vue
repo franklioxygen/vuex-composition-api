@@ -20,4 +20,7 @@ import Header from "@/components/Header.vue";
 
 <style>
 @import "@/assets/base.css";
+body {
+  text-align: center;
+}
 </style>
