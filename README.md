@@ -28,6 +28,8 @@ npm install
 npm run dev
 ```
 
+this will start both frontend and json-server, port 3000 and 3001 required
+
 ### Type-Check, Compile and Minify for Production
 
 ```sh
